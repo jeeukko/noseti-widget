@@ -76,8 +76,8 @@
 						var uptime = latest[field];
 						var maxuptime = 0;
 
-						for (var entry in data.feeds) {
-							var num = parseInt(entry[field], 10) || 0;
+						for (var i in data.feeds) {
+							var num = parseInt(data.feeds[i][field], 10) || 0;
 							if (num > maxuptime) {
 								maxuptime = num;
 							}
