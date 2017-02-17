@@ -71,8 +71,17 @@
 							class: "noseti-bar temp"
 						}).appendTo(container);
 					} else if ($(container).attr("data-type") == "uptime") { // UPTIME
+						var field = $(container).attr("data-uptimefield");
 						var latest = data.feeds[data.feeds.length - 1];
-						var uptime = latest[$(container).attr("data-uptimefield")];
+						var uptime = latest[field];
+						var maxuptime = 0;
+
+						for (var entry in data.feeds) {
+							var num = parseInt(entry[field], 10) || 0;
+							if (num > maxuptime) {
+								maxuptime = num;
+							}
+						}
 
 						$("<span>", {
 							text: $(container).attr("data-title"),
@@ -83,14 +92,14 @@
 							class: "noseti-text right"
 						}).appendTo(container);
 
-						/*$("<meter>", {
-							min: -50,
-							max: 50,
-							value: temp,
-							low: -50,
-							high: 50,
-							class: "noseti-bar temp"
-						}).appendTo(container);*/
+						$("<meter>", {
+							min: 0,
+							max: maxuptime,
+							value: uptime,
+							low: 0,
+							high: maxuptime,
+							class: "noseti-bar uptime"
+						}).appendTo(container);
 					}
 				});
 			});

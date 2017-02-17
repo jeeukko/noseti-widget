@@ -71,3 +71,19 @@ meter.noseti-bar.temp::-webkit-meter-bar {
 meter.noseti-bar.temp::-webkit-meter-optimum-value {
 	background-color: #0022AA;
 }
+
+/* UPTIME METER */
+meter.noseti-bar.uptime {
+	background-color: #FFFFFF;
+	border: 1px solid #0022AA;
+}
+meter.noseti-bar.uptime::-moz-meter-bar {
+	background: #0022AA;
+}
+meter.noseti-bar.uptime::-webkit-meter-bar {
+	background-color: #FFFFFF;
+	border: 1px solid #0022AA;
+}
+meter.noseti-bar.uptime::-webkit-meter-optimum-value {
+	background-color: #0022AA;
+}
