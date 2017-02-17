@@ -58,7 +58,7 @@
 							class: "noseti-text left"
 						}).appendTo(container);
 						$("<span>", {
-							text: temp + " Â°C",
+							text: temp + " °C",
 							class: "noseti-text right"
 						}).appendTo(container);
 
@@ -70,6 +70,27 @@
 							high: 50,
 							class: "noseti-bar temp"
 						}).appendTo(container);
+					} else if ($(container).attr("data-type") == "uptime") { // UPTIME
+						var latest = data.feeds[data.feeds.length - 1];
+						var uptime = latest[$(container).attr("data-uptimefield")];
+
+						$("<span>", {
+							text: $(container).attr("data-title"),
+							class: "noseti-text left"
+						}).appendTo(container);
+						$("<span>", {
+							text: uptime + " days",
+							class: "noseti-text right"
+						}).appendTo(container);
+
+						/*$("<meter>", {
+							min: -50,
+							max: 50,
+							value: temp,
+							low: -50,
+							high: 50,
+							class: "noseti-bar temp"
+						}).appendTo(container);*/
 					}
 				});
 			});
