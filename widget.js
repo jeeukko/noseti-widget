@@ -27,24 +27,50 @@
 				var container = this;
 
 				$.getJSON("https://thingspeak.com/channels/" + $(container).attr("data-channel") + "/feed.json", function(data) {
-					var latest = data.feeds[data.feeds.length - 1];
-					var free = latest[$(container).attr("data-freefield")];
-					var size = latest[$(container).attr("data-sizefield")];
+					if ($(container).attr("data-type") == "disk") { // DISKSPACE
+						var latest = data.feeds[data.feeds.length - 1];
+						var free = latest[$(container).attr("data-freefield")];
+						var size = latest[$(container).attr("data-sizefield")];
 
-					$("<span>", {
-						text: $(container).attr("data-title"),
-						class: "noseti-text left"
-					}).appendTo(container);
-					$("<span>", {
-						text: (size - free) + " GB / " + size + " GB",
-						class: "noseti-text right"
-					}).appendTo(container);
+						$("<span>", {
+							text: $(container).attr("data-title"),
+							class: "noseti-text left"
+						}).appendTo(container);
+						$("<span>", {
+							text: (size - free) + " GB / " + size + " GB",
+							class: "noseti-text right"
+						}).appendTo(container);
 
-					$("<progress>", {
-						max: size,
-						value: (size - free),
-						class: "noseti-bar"
-					}).appendTo(container);
+						$("<meter>", {
+							min: 0,
+							max: size,
+							value: (size - free),
+							low: 0,
+							high: (size - free),
+							class: "noseti-bar disk"
+						}).appendTo(container);
+					} else if ($(container).attr("data-type") == "temp") { // TEMPERATURE
+						var latest = data.feeds[data.feeds.length - 1];
+						var temp = latest[$(container).attr("data-tempfield")];
+
+						$("<span>", {
+							text: $(container).attr("data-title"),
+							class: "noseti-text left"
+						}).appendTo(container);
+						$("<span>", {
+							text: temp + " Â°C",
+							class: "noseti-text right"
+						}).appendTo(container);
+
+						$("<meter>", {
+							min: -50,
+							max: 50,
+							value: temp,
+							low: -50,
+							high: 50,
+							class: "noseti-bar temp"
+						}).appendTo(container);
+					}
 				});
 			});
 		});
