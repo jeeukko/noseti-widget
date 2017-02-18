@@ -17,11 +17,20 @@
 
 	function main() {
 		jQuery(document).ready(function($) {
-			$("<link>", {
-				rel: "stylesheet",
-				type: "text/css",
-				href: "https://cdn.nope.fi/noseti/latest/widget.css"
-			}).appendTo("head");
+			if (document.currentScript.src == "https://cdn.nope.fi/noseti/dev/widget.js") {
+				$("<link>", {
+					rel: "stylesheet",
+					type: "text/css",
+					href: "https://cdn.nope.fi/noseti/dev/widget.css"
+				}).appendTo("head");
+			} else  {
+				$("<link>", {
+					rel: "stylesheet",
+					type: "text/css",
+					href: "https://cdn.nope.fi/noseti/latest/widget.css"
+				}).appendTo("head");
+			}
+
 
 			$("div.noseti-container").each(function() {
 				var container = this;

@@ -3,7 +3,7 @@ div.noseti-container {
 	box-sizing: border-box;
 	padding: 10px;
 	width: 300px;
-	border: 2px solid #0022AA;
+	border: 2px solid #3399FF;
 	border-radius: 2px;
 }
 
@@ -37,53 +37,51 @@ meter.noseti-bar::-webkit-meter-optimum-value {
 /* DISK METER */
 meter.noseti-bar.disk {
 	background-color: #FFFFFF;
-	border: 1px solid #0022AA;
+	border: 1px solid #3399FF;
 }
 meter.noseti-bar.disk::-moz-meter-bar {
-	background: #0022AA;
+	background: #3399FF;
 }
 meter.noseti-bar.disk::-webkit-meter-bar {
 	background-color: #FFFFFF;
-	border: 1px solid #0022AA;
+	border: 1px solid #3399FF;
 }
 meter.noseti-bar.disk::-webkit-meter-optimum-value {
-	background-color: #0022AA;
+	background-color: #3399FF;
 }
 
 /* TEMP METER */
 meter.noseti-bar.temp {
 	background-color: #FFFFFF;
-	border: 1px solid #0022AA;
+	border: 1px solid #3399FF;
 }
 meter.noseti-bar.temp::-moz-meter-bar {
 	background-image: linear-gradient(
 		90deg,
-		#0022AA 20%,
-		#381671 50%,
-		#710B38 80%,
-		#AA0000 100%
+		#3399FF 0%,
+		#FF3399 100%
 	);
 }
 meter.noseti-bar.temp::-webkit-meter-bar {
 	background-color: #FFFFFF;
-	border: 1px solid #0022AA;
+	border: 1px solid #3399FF;
 }
 meter.noseti-bar.temp::-webkit-meter-optimum-value {
-	background-color: #0022AA;
+	background-color: #3399FF;
 }
 
 /* UPTIME METER */
 meter.noseti-bar.uptime {
 	background-color: #FFFFFF;
-	border: 1px solid #0022AA;
+	border: 1px solid #3399FF;
 }
 meter.noseti-bar.uptime::-moz-meter-bar {
-	background: #0022AA;
+	background: #3399FF;
 }
 meter.noseti-bar.uptime::-webkit-meter-bar {
 	background-color: #FFFFFF;
-	border: 1px solid #0022AA;
+	border: 1px solid #3399FF;
 }
 meter.noseti-bar.uptime::-webkit-meter-optimum-value {
-	background-color: #0022AA;
+	background-color: #3399FF;
 }
