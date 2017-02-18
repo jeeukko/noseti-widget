@@ -17,7 +17,7 @@
 
 	function main() {
 		jQuery(document).ready(function($) {
-			if (document.currentScript.src == "https://cdn.nope.fi/noseti/dev/widget.js") {
+			if (document.getElementById("noseti-script") && document.getElementById("noseti-script").src == "https://cdn.nope.fi/noseti/dev/widget.js") {
 				$("<link>", {
 					rel: "stylesheet",
 					type: "text/css",
