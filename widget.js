@@ -97,7 +97,7 @@
 							class: "noseti-text left"
 						}).appendTo(container);
 						$("<span>", {
-							text: uptime + " days",
+							text: uptime + " Days | Record: " + maxuptime + " Days",
 							class: "noseti-text right"
 						}).appendTo(container);
 
