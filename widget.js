@@ -109,6 +109,27 @@
 							high: maxuptime,
 							class: "noseti-bar uptime"
 						}).appendTo(container);
+					} else if ($(container).attr("data-type") == "pctemp") { // PC TEMPERATURE
+						var latest = data.feeds[data.feeds.length - 1];
+						var temp = latest[$(container).attr("data-tempfield")];
+
+						$("<span>", {
+							text: $(container).attr("data-title"),
+							class: "noseti-text left"
+						}).appendTo(container);
+						$("<span>", {
+							text: temp + " °C",
+							class: "noseti-text right"
+						}).appendTo(container);
+
+						$("<meter>", {
+							min: 0,
+							max: 100,
+							value: temp,
+							low: 0,
+							high: 100,
+							class: "noseti-bar pctemp"
+						}).appendTo(container);
 					}
 				});
 			});

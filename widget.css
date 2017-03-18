@@ -111,3 +111,48 @@ meter.noseti-bar.uptime::-webkit-meter-bar {
 meter.noseti-bar.uptime::-webkit-meter-optimum-value {
 	background-color: #3399FF;
 }
+
+/* PCTEMP METER */
+meter.noseti-bar.pctemp {
+	background-color: #FFFFFF;
+	border: 1px solid #3399FF;
+}
+meter.noseti-bar.pctemp::-moz-meter-bar {
+	background: #3399FF;
+}
+meter.noseti-bar.pctemp::-webkit-meter-bar {
+	background-color: #FFFFFF;
+	border: 1px solid #3399FF;
+}
+meter.noseti-bar.pctemp::-webkit-meter-optimum-value {
+	background-color: #3399FF;
+}
+meter.noseti-bar.pctemp::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(
+		90deg,
+		rgba(0, 0, 0, 0) 0%,
+
+		rgba(0, 0, 0, 0) 24.75%,
+		rgba(35,107,178, 1) 24.75%,
+		rgba(35,107,178, 1) 25.25%,
+		rgba(0, 0, 0, 0) 25.25%,
+
+		rgba(0, 0, 0, 0) 49.75%,
+		rgba(35,107,178, 1) 49.75%,
+		rgba(35,107,178, 1) 50.25%,
+		rgba(0, 0, 0, 0) 50.25%,
+
+		rgba(0, 0, 0, 0) 74.75%,
+		rgba(35,107,178, 1) 74.75%,
+		rgba(35,107,178, 1) 75.25%,
+		rgba(0, 0, 0, 0) 75.25%,
+
+		rgba(0, 0, 0, 0) 100%
+	);
+}
