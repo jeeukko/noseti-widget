@@ -15,12 +15,25 @@
 		main();
 	}
 
+	function get_args() {
+		var script_tag = document.getElementById("noseti-script");
+		var query = script_tag.src.replace(/^[^\?]+\??/, "");
+		var vars = query.split("&");
+		var args = {};
+		for (var i = 0; i < vars.length; i++) {
+			var pair = vars[i].split("=");
+			args[pair[0]] = decodeURI(pair[1]).replace(/\+/g, " ");
+		}
+		return args;
+	}
+
 	function main() {
 		jQuery(document).ready(function($) {
+			var args = get_args();
 			$("<link>", {
 				rel: "stylesheet",
 				type: "text/css",
-				href: "https://cdn.nope.fi/noseti/latest/widget.css"
+				href: "https://cdn.nope.fi/noseti/latest/widget.css?key=" + args.key
 			}).appendTo("head");
 
 			$("div.noseti-container").each(function() {
